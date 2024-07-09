@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<h1>This page is edit.</h1>
+<form action="../save_edit/" method="post">
+    <label>
+        task name
+        <input type="text" name="name" value="{{ .Name }}" required />
+    </label>
+    <label>
+        deadline
+        <input type="datetime-local" name="deadline" value="{{ .Deadline }}">
+    </label>
+    <button type="submit" name="id" value="{{ .ID }}">save</button>
+</form>

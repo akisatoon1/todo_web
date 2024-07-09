@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<h1>This page is home.</h1>
+<a href="../edit/">edit</a>
+<br>
+<table>
+    <tr>
+        <th>task name</th>
+        <th>deadline</th>
+        <th>created at</th>
+    </tr>
+    {{ range . }}
+    <tr>
+        <td>{{ .Name }}</td>
+        <td>{{ .Deadline }}</td>
+        <td>{{ .Created_at }}</td>
+        <td>
+            <form action="../delete/" method="post">
+                <button type="submit" name="id" , value="{{ .ID }}">delete</button>
+            </form>
+        </td>
+        <td>
+            <form action="../edit/" method="post">
+                <button type="submit" name="id" , value="{{ .ID }}">edit</button>
+            </form>
+        </td>
+    </tr>
+    {{ end }}
+</table>
+<a href="../add/">add task</a>
